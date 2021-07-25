@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ArrowBackModule } from '../components/arrow-back/arrow-back.module';
+
 import { CreateUserComponent } from './create-user.component';
 import { ButtonModule } from '../components/button/button.module';
+import { FormGroupModule } from '../components/form-group/form-group.module';
+import { ArrowBackIconModule } from '../components/arrow-back-icon/arrow-back-icon.module';
 
 const routes: Routes = [{ path: '', component: CreateUserComponent }];
 
@@ -15,8 +17,9 @@ const routes: Routes = [{ path: '', component: CreateUserComponent }];
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ArrowBackModule,
     ButtonModule,
+    FormGroupModule,
+    ArrowBackIconModule,
   ],
   exports: [CreateUserComponent],
 })

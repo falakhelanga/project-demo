@@ -4,10 +4,9 @@ import { CommonModule } from '@angular/common';
 
 import { UsersComponent } from './users.component';
 
-import { IconModule } from '../components/icon/icon.module';
-import { IconbtnModule } from '../components/iconbtn/iconbtn.module';
-import { DeleteButtonModule } from '../components/delete-button/delete-button.module';
 import { ButtonModule } from '../components/button/button.module';
+import { TrashIconModule } from '../components/trash-icon/trash-icon.module';
+import { EditIconModule } from '../components/edit-icon/edit-icon.module';
 
 const routes: Routes = [{ path: '', component: UsersComponent }];
 
@@ -17,10 +16,10 @@ const routes: Routes = [{ path: '', component: UsersComponent }];
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    IconModule,
-    IconbtnModule,
-    DeleteButtonModule,
+
+    EditIconModule,
     ButtonModule,
+    TrashIconModule,
   ],
   exports: [UsersComponent],
 })

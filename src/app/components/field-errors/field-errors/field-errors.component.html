@@ -1,0 +1,11 @@
+<ng-container *ngIf="userForm.get(name)?.touched">
+  <div class="error" *ngIf="userForm.get(name)?.errors?.required">
+    {{ name }} is requiered
+  </div>
+  <div *ngIf="userForm.get(name)?.errors?.email" class="=error">
+    please enter a valid email
+  </div>
+  <div class="error" *ngIf="userForm.get(name)?.errors?.min">
+    your age must be greater than 0
+  </div>
+</ng-container>

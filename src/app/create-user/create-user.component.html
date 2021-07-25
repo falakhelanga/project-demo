@@ -1,6 +1,8 @@
 <div class="container">
   <div class="title-arrow title">
-    <app-arrow-back (btnClick)="goBack()"></app-arrow-back>
+    <div class="go-back">
+      <app-arrow-back-icon (btnClick)="goBack()"></app-arrow-back-icon>
+    </div>
 
     <h1 class="create-user-title">{{ title }}</h1>
   </div>
@@ -8,61 +10,51 @@
   <hr />
   <div *ngIf="isInValid" class="error-div">Some fields are not valid!</div>
 
-  <form [formGroup]="userForm" (ngSubmit)="saveUser()" class="inner-container">
-    <div style="margin-bottom: 15px" class="form-group">
-      <label for="name">Name</label>
-      <input type="string" formControlName="name" name="name" />
-      <div
-        class="error"
-        *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
-      >
-        this field is requiered!
-      </div>
-    </div>
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="inner-container">
+      <!-- name field form group -->
+      <app-form-group
+        placeholder="name of the user"
+        label="Name"
+        name="name"
+        type="text"
+        [userForm]="userForm"
+        formControlName="name"
+      ></app-form-group>
 
-    <div style="margin-bottom: 15px" class="form-group">
-      <label for="surname">Surname</label>
-      <input type="string" formControlName="surname" name="surname" />
-      <div
-        class="error"
-        *ngIf="
-          userForm.get('surname')?.invalid && userForm.get('surname')?.touched
-        "
-      >
-        this field is requiered!
-      </div>
-    </div>
+      <!-- surname field form group -->
+      <app-form-group
+        label="Surname"
+        placeholder="surname of the user"
+        name="surname"
+        type="text"
+        [userForm]="userForm"
+        formControlName="surname"
+      ></app-form-group>
 
-    <div style="margin-bottom: 15px" class="form-group">
-      <label for="email">Email</label>
-      <input type="email" formControlName="email" name="email" />
-      <div
-        class="error"
-        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
-      >
-        <div *ngIf="userForm.get('email')?.errors?.required">
-          this field is requiered!
-        </div>
-        <div *ngIf="userForm.get('email')?.errors?.email">
-          please enter a valid email!
-        </div>
-      </div>
-    </div>
+      <!-- email field form group -->
+      <app-form-group
+        label="Email"
+        placeholder="email of the user"
+        name="email"
+        type="email"
+        [userForm]="userForm"
+        formControlName="email"
+      ></app-form-group>
 
-    <div style="margin-bottom: 15px" class="form-group">
-      <label for="age">Age</label>
-      <input type="number" formControlName="age" name="age" />
-      <div
-        class="error"
-        *ngIf="userForm.get('age')?.errors?.min && userForm.get('age')?.touched"
-      >
-        your age must be greate than 0
-      </div>
+      <!-- number field form group -->
+      <app-form-group
+        label="Age"
+        name="age"
+        placeholder="age of the user"
+        type="number"
+        [userForm]="userForm"
+        formControlName="age"
+      ></app-form-group>
     </div>
-
-    <button type="submit" style="margin-top: 25px" class="btn">
-      Save User
-    </button>
+    <hr />
+    <div class="btn-container">
+      <button type="submit" class="btn">Save User</button>
+    </div>
   </form>
-  <hr />
 </div>

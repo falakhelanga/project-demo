@@ -39,11 +39,6 @@ export class UsersComponent implements OnInit {
     await this.router.navigate(['/create-user']);
   }
 
-  getFormattedCreatedTime(time: Date): string {
-    // TODO: turn this into an Angular PIPE
-    return dayjs(time).format('HH:mm:ss DD MMM YYYY');
-  }
-
   async editUser(user: IUser): Promise<void> {
     await this.router.navigate(['/create-user'], {
       queryParams: {

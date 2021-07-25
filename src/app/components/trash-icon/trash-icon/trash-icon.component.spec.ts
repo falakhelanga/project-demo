@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArrowBackComponent } from './arrow-back.component';
+import { TrashIconComponent } from './trash-icon.component';
 
-describe('ArrowBackComponent', () => {
-  let component: ArrowBackComponent;
-  let fixture: ComponentFixture<ArrowBackComponent>;
+describe('TrashIconComponent', () => {
+  let component: TrashIconComponent;
+  let fixture: ComponentFixture<TrashIconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArrowBackComponent ]
+      declarations: [ TrashIconComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArrowBackComponent);
+    fixture = TestBed.createComponent(TrashIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

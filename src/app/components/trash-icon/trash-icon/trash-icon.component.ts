@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-delete-button',
-  templateUrl: './delete-button.component.html',
-  styleUrls: ['./delete-button.component.scss'],
+  selector: 'app-trash-icon',
+  templateUrl: './trash-icon.component.html',
+  styleUrls: ['./trash-icon.component.scss'],
 })
-export class DeleteButtonComponent implements OnInit {
+export class TrashIconComponent implements OnInit {
   @Output() deleteUser = new EventEmitter();
   constructor() {}
 

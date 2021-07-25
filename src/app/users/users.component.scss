@@ -2,8 +2,7 @@
   width: 100%;
   background-color: #ffffff;
 
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 8px;
   border-collapse: collapse;
   border-style: hidden;
   box-shadow: 0 0 0 1px #666;
@@ -11,6 +10,7 @@
   // border in all tr
   tr {
     border: 1px solid #707070;
+    height: 40px;
   }
 
   // thead styles
@@ -22,7 +22,7 @@
     th {
       text-align: left;
       padding-right: 3rem;
-      width: 1;
+      font-weight: normal;
     }
 
     .first-th,
@@ -37,6 +37,7 @@
   }
 
   // tbody styles
+
   td {
     text-align: left;
     padding-top: 0.3rem;
@@ -54,8 +55,4 @@
   .surname {
     text-transform: capitalize;
   }
-}
-
-.create-user-btn {
-  margin-top: 3rem;
 }

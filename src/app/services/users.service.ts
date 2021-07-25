@@ -7,21 +7,19 @@ import { FormGroup } from '@angular/forms';
 export class UsersService {
   constructor() {}
 
+  // get all users
+  getUsers(): IUser[] {
+    const rawUsersData = localStorage.getItem('Users');
+    return JSON.parse(rawUsersData ?? '[]');
+  }
+
   // deleteuser
   deleteUser(user: IUser) {
-    const rawUsersData = localStorage.getItem('Users');
-    const existingUsers: IUser[] = JSON.parse(rawUsersData ?? '[]');
-    const filteredUsers: IUser[] = existingUsers.filter(
+    const filteredUsers: IUser[] = this.getUsers().filter(
       (currentUser) => currentUser.Id !== user.Id
     );
 
     localStorage.setItem('Users', JSON.stringify(filteredUsers));
-  }
-
-  // get all users
-  getUsers() {
-    const rawUsersData = localStorage.getItem('Users');
-    return JSON.parse(rawUsersData ?? '[]');
   }
 
   // update and create user
@@ -36,14 +34,12 @@ export class UsersService {
     };
 
     if (!edit) {
-      const rawUsersData = localStorage.getItem('Users');
-      const existingUsers: IUser[] = JSON.parse(rawUsersData ?? '[]');
+      const existingUsers: IUser[] = this.getUsers();
 
       existingUsers.push(user);
       localStorage.setItem('Users', JSON.stringify(existingUsers));
     } else {
-      const rawUsersData = localStorage.getItem('Users');
-      const existingUsers: IUser[] = JSON.parse(rawUsersData ?? '[]');
+      const existingUsers: IUser[] = this.getUsers();
       const existingUser = existingUsers.find((user) => user.Id === id);
       const existingUserIndex = existingUsers.findIndex(
         (user) => user === existingUser

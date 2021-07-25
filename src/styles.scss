@@ -6,9 +6,10 @@
   box-sizing: border-box;
 }
 .container {
-  margin-top: 72px;
+  margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
+  padding-bottom: 30px;
 }
 body {
   background-color: #fbfbfb;
@@ -22,8 +23,8 @@ body {
 }
 
 .inner-container {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .icon-btn {
@@ -36,12 +37,21 @@ body {
 
 .btn {
   padding: 0.5rem;
-  background-color: #ffffff;
-  border: 1px solid #9a9a9a;
-  border-radius: 5px;
-  font-weight: bold;
+  background-color: #3d3d3d;
+  border: 1px solid #3d3d3d;
+  border-radius: 8px;
+
+  color: #ffffff;
+  text-transform: uppercase;
   cursor: pointer;
   &:hover {
     background-color: #9a9a9a;
   }
+}
+
+.btn-container {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }

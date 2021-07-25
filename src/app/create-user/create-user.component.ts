@@ -40,14 +40,14 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((data) => {
       this.id = data.id;
-      const users = this.userService.getUsers();
-      const user: IUser = users.find((user: IUser) => user.Id === data.id);
+      const users: IUser[] = this.userService.getUsers();
+      const user = users.find((user: IUser) => user.Id === data.id);
 
       this.userForm.setValue({
         name: user?.Name || '',
         surname: user?.Surname || '',
         email: user?.Email || '',
-        age: user?.Age || '',
+        age: user?.Age || null,
       });
     });
     this.route.fragment.subscribe((data) => {
