@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="title">Users</h1>
+
+  <hr />
+  <div class="inner-container">
+    <table class="users-table">
+      <thead>
+        <th class="first-th">ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Create Time</th>
+        <th>Age</th>
+        <th>Edit</th>
+        <th class="last-th">delete</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="first-td">{{ user.Id }}</td>
+          <td class="name">{{ user.Name }}</td>
+          <td class="surname">{{ user.Surname }}</td>
+          <td>{{ user.Email }}</td>
+          <td>{{ getFormattedCreatedTime(user.CreatedTime) }}</td>
+          <!--TODO: Rather use custom created Angular Pipe to format the date-->
+          <td>{{ user.Age }}</td>
+          <td>
+            <app-icon (editUser)="editUser(user)"></app-icon>
+          </td>
+          <td class="last-td">
+            <app-delete-button
+              (deleteUser)="deleteUser(user)"
+            ></app-delete-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="create-user-btn">
+      <app-button
+        text=" Create New User"
+        (btnClick)="createNewUser()"
+      ></app-button>
+    </div>
+  </div>
+  <hr />
+</div>

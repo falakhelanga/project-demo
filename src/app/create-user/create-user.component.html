@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="title-arrow title">
+    <app-arrow-back (btnClick)="goBack()"></app-arrow-back>
+
+    <h1 class="create-user-title">{{ title }}</h1>
+  </div>
+
+  <hr />
+  <div *ngIf="isInValid" class="error-div">Some fields are not valid!</div>
+
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()" class="inner-container">
+    <div style="margin-bottom: 15px" class="form-group">
+      <label for="name">Name</label>
+      <input type="string" formControlName="name" name="name" />
+      <div
+        class="error"
+        *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
+      >
+        this field is requiered!
+      </div>
+    </div>
+
+    <div style="margin-bottom: 15px" class="form-group">
+      <label for="surname">Surname</label>
+      <input type="string" formControlName="surname" name="surname" />
+      <div
+        class="error"
+        *ngIf="
+          userForm.get('surname')?.invalid && userForm.get('surname')?.touched
+        "
+      >
+        this field is requiered!
+      </div>
+    </div>
+
+    <div style="margin-bottom: 15px" class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" name="email" />
+      <div
+        class="error"
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+      >
+        <div *ngIf="userForm.get('email')?.errors?.required">
+          this field is requiered!
+        </div>
+        <div *ngIf="userForm.get('email')?.errors?.email">
+          please enter a valid email!
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 15px" class="form-group">
+      <label for="age">Age</label>
+      <input type="number" formControlName="age" name="age" />
+      <div
+        class="error"
+        *ngIf="userForm.get('age')?.errors?.min && userForm.get('age')?.touched"
+      >
+        your age must be greate than 0
+      </div>
+    </div>
+
+    <button type="submit" style="margin-top: 25px" class="btn">
+      Save User
+    </button>
+  </form>
+  <hr />
+</div>

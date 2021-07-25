@@ -1,0 +1,61 @@
+.users-table {
+  width: 100%;
+  background-color: #ffffff;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-collapse: collapse;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #666;
+
+  // border in all tr
+  tr {
+    border: 1px solid #707070;
+  }
+
+  // thead styles
+  thead {
+    height: 50px;
+
+    justify-content: space-between;
+
+    th {
+      text-align: left;
+      padding-right: 3rem;
+      width: 1;
+    }
+
+    .first-th,
+    .last-th {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .last-th {
+      text-align: right;
+    }
+  }
+
+  // tbody styles
+  td {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  .first-td,
+  .last-td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .last-td {
+    text-align: right;
+  }
+  .name,
+  .surname {
+    text-transform: capitalize;
+  }
+}
+
+.create-user-btn {
+  margin-top: 3rem;
+}

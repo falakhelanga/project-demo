@@ -1,0 +1,50 @@
+.title-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.create-user-title {
+  margin-left: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  // input styles
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #9a9a9a;
+    width: 50%;
+    outline: none;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    &:focus {
+      background-color: #e8f0fe;
+    }
+  }
+}
+
+.iconn {
+  color: blue;
+  font-size: 2rem;
+}
+.error-div {
+  width: 100%;
+  background-color: #f32013;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #f32013;
+  margin-top: 0.8rem;
+}
