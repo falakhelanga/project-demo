@@ -1,16 +1,16 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-arrow-back-icon',
-  templateUrl: './arrow-back-icon.component.html',
-  styleUrls: ['./arrow-back-icon.component.scss'],
+  selector: 'app-icon',
+  templateUrl: './icon.component.html',
+  styleUrls: ['./icon.component.scss'],
 })
-export class ArrowBackIconComponent implements OnInit {
+export class IconComponent implements OnInit {
   @Output() btnClick = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
-
   handleClick() {
     this.btnClick.emit();
   }

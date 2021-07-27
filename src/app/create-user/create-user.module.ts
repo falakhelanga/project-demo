@@ -6,7 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateUserComponent } from './create-user.component';
 import { ButtonModule } from '../components/button/button.module';
 import { FormGroupModule } from '../components/form-group/form-group.module';
-import { ArrowBackIconModule } from '../components/arrow-back-icon/arrow-back-icon.module';
+
+import { IconModule } from '../components/icon/icon.module';
 
 const routes: Routes = [{ path: '', component: CreateUserComponent }];
 
@@ -19,7 +20,8 @@ const routes: Routes = [{ path: '', component: CreateUserComponent }];
     ReactiveFormsModule,
     ButtonModule,
     FormGroupModule,
-    ArrowBackIconModule,
+
+    IconModule,
   ],
   exports: [CreateUserComponent],
 })

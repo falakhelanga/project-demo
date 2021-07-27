@@ -3,16 +3,11 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Input,
-  Output,
-  EventEmitter,
-  ElementRef,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { IUser } from '../interface/user';
 
-import * as dayjs from 'dayjs';
 import { UsersService } from '../services/users.service';
 
 @Component({

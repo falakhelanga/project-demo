@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 
 import { ButtonModule } from '../components/button/button.module';
-import { TrashIconModule } from '../components/trash-icon/trash-icon.module';
-import { EditIconModule } from '../components/edit-icon/edit-icon.module';
+
+import { IconModule } from '../components/icon/icon.module';
 
 const routes: Routes = [{ path: '', component: UsersComponent }];
 
@@ -14,12 +14,11 @@ const routes: Routes = [{ path: '', component: UsersComponent }];
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [UsersComponent],
   imports: [
+    IconModule,
     RouterModule.forChild(routes),
     CommonModule,
 
-    EditIconModule,
     ButtonModule,
-    TrashIconModule,
   ],
   exports: [UsersComponent],
 })
